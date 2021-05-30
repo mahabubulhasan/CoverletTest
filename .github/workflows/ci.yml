@@ -12,6 +12,6 @@ jobs:
       with:
         dotnet-version: '5.0.x'
     - name: Build
-      run: donet build
+      run: dotnet build
     - name: Test
       run: dotnet test
