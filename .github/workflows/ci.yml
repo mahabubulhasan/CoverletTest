@@ -15,3 +15,16 @@ jobs:
       run: dotnet build
     - name: Test
       run: dotnet test
+      
+    - name : coverlet
+      uses: b3b00/coverlet-action@1.1.0
+      with:
+        testProject: 'MyApp.Tests.csproj'
+        output: 'lcov.info'
+        outputFormat: 'lcov'
+        excludes: '[program]*,[test]test.*'
+    - name: coveralls      
+      uses: coverallsapp/github-action@v1.1.1
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN }} 
+        path-to-lcov: ${{steps.coverlet.outputs.coverageFile}} 
