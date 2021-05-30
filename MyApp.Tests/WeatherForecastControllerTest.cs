@@ -3,7 +3,7 @@ using Xunit;
 
 namespace MyApp.Tests
 {
-    public class UnitTest1
+    public class WeatherForecastControllerTest
     {
         [Fact]
         public void Test1()
